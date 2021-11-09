@@ -43,4 +43,4 @@ while True:
         break
 
     # wait some time before re-updating the LCD
-    time.sleep(0.05)
+    time.sleep(0.2)

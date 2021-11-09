@@ -22,3 +22,5 @@ while True:
         print("Error")
     except IOError:
         print("Error")
+
+    time.sleep(0.2)

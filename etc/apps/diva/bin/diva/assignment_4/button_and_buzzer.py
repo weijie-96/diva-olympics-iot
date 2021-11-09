@@ -21,3 +21,5 @@ while True:
         break
     except (IOError,TypeError) as e:
         print("Error")
+
+    time.sleep(0.2)
