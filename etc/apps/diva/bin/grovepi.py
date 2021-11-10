@@ -259,7 +259,7 @@ def digitalRead(pin):
 	data = read_identified_i2c_block( dRead_cmd, no_bytes = 1)[0]
 	jsondata = json.dumps({"t": time.ctime(), "dpin_rd":pin, "val":value})
 	with open("/home/pi/diva/grovepi.log", "a") as f:
-    	f.write("{}\n".format(jsondata))
+		f.write("{}\n".format(jsondata))
 	return data
 
 # Arduino Digital Write
@@ -268,7 +268,7 @@ def digitalWrite(pin, value):
 	read_i2c_block(no_bytes = 1)
 	jsondata = json.dumps({"t": time.ctime(), "dpin_wr":pin, "val":value})
 	with open("/home/pi/diva/grovepi.log", "a") as f:
-    	f.write("{}\n".format(jsondata))
+		f.write("{}\n".format(jsondata))
 	return 1
 
 # Read analog value from Pin
@@ -277,7 +277,7 @@ def analogRead(pin):
 	number = read_identified_i2c_block(aRead_cmd, no_bytes = 2)
 	jsondata = json.dumps({"t": time.ctime(), "apin_rd":pin, "val":(number[0] * 256 + number[1])})
 	with open("/home/pi/diva/grovepi.log", "a") as f:
-    	f.write("{}\n".format(jsondata))
+		f.write("{}\n".format(jsondata))
 	return number[0] * 256 + number[1]
 
 
@@ -318,7 +318,7 @@ def ultrasonicRead(pin):
 	number = read_identified_i2c_block(uRead_cmd, no_bytes = 2)
 	jsondata = json.dumps({"t": time.ctime(), "ultra_rd":pin, "val":(number[0] * 256 + number[1])})
 	with open("/home/pi/diva/grovepi.log", "a") as f:
-    	f.write("{}\n".format(jsondata))
+		f.write("{}\n".format(jsondata))
 	return (number[0] * 256 + number[1])
 
 
