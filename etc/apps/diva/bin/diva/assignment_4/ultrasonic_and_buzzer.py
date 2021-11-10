@@ -1,3 +1,4 @@
+import time
 import grovepi
 
 # Connect the Grove Ultrasonic Ranger to digital port D4
