@@ -257,7 +257,7 @@ def read_identified_i2c_block(read_command_id, no_bytes):
 def digitalRead(pin):
 	write_i2c_block(dRead_cmd + [pin, unused, unused])
 	data = read_identified_i2c_block( dRead_cmd, no_bytes = 1)[0]
-	jsondata = json.dumps({"t": time.ctime(), "dpin_rd":pin, "val":value})
+	jsondata = json.dumps({"t": time.ctime(), "dpin_rd":pin, "val":data})
 	with open("/home/pi/diva/grovepi.log", "a") as f:
 		f.write("{}\n".format(jsondata))
 	return data
